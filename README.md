@@ -41,6 +41,7 @@ This project relies entirely on client-side rendering with CDN scripts, meaning 
 - **Focus Areas:** Scalable Architectures, MERN Stack, Fullstack Optimization
 - **Email Protocol:** [devkamesh72@gmail.com](mailto:devkamesh72@gmail.com)
 - **Instagram Registry:** [@mr_broken_soul_007](https://instagram.com)
+- **GitHub Node:** [@kamesh-dev7](https://github.com/kamesh-dev7)
 
 ---
 *Built with Precision.* 
