@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="global.css" />
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary-fixed">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-[#0e0e0e]/70 backdrop-blur-xl z-50 shadow-[0_0_40px_rgba(255,0,0,0.08)]">
+        <a href="index.html" class="text-xl font-extrabold tracking-tighter text-white font-['Sora']">
+            KINETIC_ARCHITECT
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="projectinfo.html">Work</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ff8e7d] border-b-2 border-[#ff8e7d] pb-1"
+                href="about.html">About</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="index.html#contact">Contact</a>
+        </div>
+        <button
+            onclick="window.location.href='index.html#contact'"
+            class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold bg-primary text-on-primary-fixed px-6 py-2 transition-all duration-300 hover:bg-[#ff8e7d] hover:text-black scale-95 active:scale-90">
+            Get in Touch
+        </button>
+    </nav>
+    <main class="pt-24">
+        <!-- Hero Section: Engineering Digital Resilience -->
+        <section class="relative px-8 py-20 overflow-hidden">
+            <div
+                class="absolute -left-20 top-0 text-[12rem] font-extrabold text-stroke opacity-10 pointer-events-none select-none">
+                KAMESH
+            </div>
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 z-10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="h-[2px] w-12 bg-primary"></div>
+                        <span class="font-label text-primary uppercase tracking-[0.2em] text-xs font-bold">About the
+                            Architect</span>
+                    </div>
+                    <h1 class="font-sora text-6xl md:text-8xl font-extrabold tracking-[-0.04em] mb-8 leading-none">
+                        Engineering <span class="text-primary">Digital</span> Resilience
+                    </h1>
+                    <p class="font-body text-on-surface-variant text-lg md:text-xl leading-relaxed max-w-2xl mb-10">
+                        I am a MERN stack developer dedicated to building structural digital experiences. My approach
+                        blends the precision of terminal-driven logic with a high-end editorial aesthetic. Currently
+                        available for freelance collaborations that demand uncompromising performance and visual edge.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-surface-container-high px-6 py-4 border-l-4 border-primary">
+                            <span class="block text-primary font-bold text-2xl">OPEN</span>
+                            <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">For
+                                Freelance</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div
+                        class="aspect-square bg-surface-container-highest relative grayscale hover:grayscale-0 transition-all duration-700 group">
+                        <img alt="Portrait of Kamesh" class="w-full h-full object-cover"
+                            data-alt="Professional portrait of a male developer in dark lighting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZToP9iz0X_IAx_brG4gFsbfO7OL0RACnQpVy3g5YyTSTaQueXg1x37liGQKQP6G_pheKJpXWHOJ7FzbIXz3i8VkfA0OaCWhTSz0sUXkOIANDwATGSwD4T0TSBkemboLRVgSh2x6Qz6XcJriSPGKcg1NqgYmnfKTvB6XVcUu4GmKTLfsm269oSw-eD093jetP7_0F9txKPNysC3_XjkbCky6JZ4pria3MEpz7LVRU8HnmWzu6CVjCvzhndPOFyl0rNnPclffVDOAA" />
+                        <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+                        <div class="absolute -bottom-4 -right-4 w-full h-full border border-primary/20 -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Academic Foundation & Core Arsenal (Bento Grid) -->
+        <section class="bg-surface-container-low py-24 px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Academic Block -->
+                    <div
+                        class="md:col-span-2 bg-surface-container-highest p-10 flex flex-col justify-between group overflow-hidden relative">
+                        <div class="absolute top-0 right-0 p-8">
+                            <span class="material-symbols-outlined text-primary text-6xl opacity-20">school</span>
+                        </div>
+                        <div>
+                            <h2 class="font-sora text-3xl font-extrabold mb-6 flex items-center gap-4">
+                                <span class="text-primary">01</span> Academic Foundation
+                            </h2>
+                            <div class="space-y-4">
+                                <div>
+                                    <p class="font-sora text-xl font-bold text-white">B.Tech Information Technology</p>
+                                    <p class="font-body text-on-surface-variant">Dhanalakshmi College, Manimangalam,
+                                        Tambaram</p>
+                                    <p class="font-label text-primary-fixed-dim mt-1">2024 — 2028 (Candidate)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12">
+                            <p class="font-body text-on-surface-variant italic">"Building the logic layers that sustain
+                                the digital architectures of tomorrow."</p>
+                        </div>
+                    </div>
+                    <!-- Tech Stack Block -->
+                    <div class="bg-surface-container p-10 flex flex-col justify-between border-t-4 border-primary">
+                        <div>
+                            <h2 class="font-sora text-3xl font-extrabold mb-8">
+                                <span class="text-primary">02</span> Arsenal
+                            </h2>
+                            <div class="flex flex-col gap-4">
+                                <div class="flex justify-between items-center py-2 border-b border-outline-variant/15">
+                                    <span class="font-label font-bold tracking-widest uppercase">MERN</span>
+                                    <span class="text-primary material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">layers</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-outline-variant/15">
+                                    <span class="font-label font-bold tracking-widest uppercase">Tailwind</span>
+                                    <span class="text-primary material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">palette</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2 border-b border-outline-variant/15">
+                                    <span class="font-label font-bold tracking-widest uppercase">Typescript</span>
+                                    <span class="text-primary material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">code</span>
+                                </div>
+                                <div class="flex justify-between items-center py-2">
+                                    <span class="font-label font-bold tracking-widest uppercase">Java</span>
+                                    <span class="text-primary material-symbols-outlined"
+                                        style="font-variation-settings: 'FILL' 1;">terminal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Availability & Contact Block -->
+                    <div class="md:col-span-3 grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+                        <!-- Terminal Component -->
+                        <div
+                            class="lg:col-span-2 bg-surface-container-lowest p-8 border border-outline-variant/15 font-mono text-sm relative">
+                            <div class="flex gap-2 mb-6">
+                                <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-on-surface-variant"><span class="text-primary">guest@kinetic:</span><span
+                                        class="text-tertiary">~</span>$ locate kamesh --details</p>
+                                <p class="text-white"><span class="text-primary-dim">&gt;</span> [ADDRESS]: no:101, APJ
+                                    Abdul Kalam Nangar, Somangalam</p>
+                                <p class="text-white pl-5">Tambaram, Tamil Nadu, India.</p>
+                                <p class="text-white"><span class="text-primary-dim">&gt;</span> [STATUS]: <span
+                                        class="bg-primary/20 text-primary px-2">AVAILABLE_FOR_HIRE</span></p>
+                                <p class="text-on-surface-variant"><span class="text-primary">guest@kinetic:</span><span
+                                        class="text-tertiary">~</span>$ <span class="animate-pulse">_</span></p>
+                            </div>
+                        </div>
+                        <!-- Social Block -->
+                        <div
+                            class="bg-primary flex flex-col items-center justify-center p-8 group cursor-pointer transition-all duration-300 hover:bg-primary-container">
+                            <img src="_mr_broken_soul_007_qr.png" alt="Instagram QR Code" class="h-20 w-20 mb-4 rounded-xl bg-white p-1 group-hover:scale-110 transition-transform shadow-lg" />
+                            <p class="font-label font-black text-on-primary-fixed uppercase tracking-tighter text-lg">
+                                @mr_broken_soul_007</p>
+                            <p
+                                class="font-label text-on-primary-fixed/60 uppercase text-xs mt-2 font-bold tracking-widest">
+                                Instagram Profile</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Location Context -->
+        <section class="px-8 py-20 bg-surface">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2 h-[400px] bg-surface-container-high relative overflow-hidden">
+                    <div class="absolute inset-0 bg-primary/5 z-10 pointer-events-none"></div>
+                    <!-- Mock Map Background -->
+                    <div class="w-full h-full opacity-40 mix-blend-luminosity"
+                        data-alt="Monochrome dark map of a city grid" data-location="Somangalam, Tambaram"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmfyn5K136xAM-RUUBRLxZEJ4uH74GgORjtyroG2p6XrOK05TrzMCYKoO8r0ThUD1pCtbIN9xAs-oQ1mu7a7TfBxdCpdaQ-hCLSlZHnJwAjUwxm53uOrnod5CQsRsZgcBFBYDDhroiG2oxUwQ6B_LaaAeC56X-4Wm8foKVpf03l9gS2MhfYEqBT-UpwAO4_-2aI9BziSXAlio-X_Lz9ul1S-ajOmXMUH7x1DHQU67gTiSZnepHljI0kcN7aFcZcLKdYlMJvWkWrm4'); background-size: cover; background-position: center;">
+                    </div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                        <div class="relative">
+                            <div class="w-8 h-8 bg-primary animate-ping absolute rounded-full"></div>
+                            <div class="w-8 h-8 bg-primary relative rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-black text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">location_on</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h3 class="font-sora text-4xl font-extrabold mb-6 leading-tight">Operating from the <span
+                            class="text-primary">heart</span> of Tamil Nadu.</h3>
+                    <p class="font-body text-on-surface-variant text-lg mb-8">
+                        Strategically positioned in Tambaram, I leverage a local foundation to deliver global-standard
+                        engineering solutions. My workspace is an obsidian redline zone where high-performance code
+                        meets architectural design.
+                    </p>
+                    <a class="inline-flex items-center gap-4 text-primary font-sora font-bold uppercase tracking-widest group"
+                        href="mailto:devkamesh72@gmail.com">
+                        Inquire about projects
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-2 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#484848]/15">
+        <div class="text-[#ff8e7d] font-bold tracking-widest uppercase text-xs">
+            KINETIC_ARCHITECT
+        </div>
+        <div class="flex gap-8">
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://github.com" target="_blank">GitHub</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://instagram.com" target="_blank">Instagram</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="index.html#contact">Contact</a>
+        </div>
+        <div class="font-['Sora'] text-[#ababab] text-sm">
+            Built with Precision © 2024
+        </div>
+    </footer>
+</body>
+
+</html>

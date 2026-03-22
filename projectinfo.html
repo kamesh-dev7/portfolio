@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="global.css" />
+</head>
+
+<body class="bg-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-[#0e0e0e]/70 backdrop-blur-xl z-50 shadow-[0_0_40px_rgba(255,0,0,0.08)]">
+        <a href="index.html" class="text-xl font-extrabold tracking-tighter text-white font-['Sora']">
+            KINETIC_ARCHITECT
+        </a>
+        <div class="hidden md:flex items-center gap-12">
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ff8e7d] border-b-2 border-[#ff8e7d] pb-1"
+                href="projectinfo.html">Work</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="about.html">About</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="index.html#contact">Contact</a>
+        </div>
+        <button
+            onclick="window.location.href='index.html#contact'"
+            class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold bg-[#ff8e7d] text-black px-6 py-2 transition-all duration-300 hover:bg-[#ff8e7d] hover:text-black active:scale-90 scale-95">
+            Get in Touch
+        </button>
+    </nav>
+    <main class="pt-32 pb-20">
+        <!-- Hero Section -->
+        <section class="px-8 mb-24">
+            <div class="relative">
+                <span
+                    class="absolute -top-12 -left-4 text-[10rem] font-extrabold text-surface-container-high opacity-20 select-none pointer-events-none font-headline">01</span>
+                <h1
+                    class="text-[3.5rem] font-extrabold tracking-[-0.04em] leading-tight font-headline hero-text-shadow">
+                    <span class="text-primary">PROJECTS</span> ARCHIVE
+                </h1>
+                <p class="text-on-surface-variant text-lg max-w-2xl mt-4 font-body">
+                    Curated MERN stack solutions engineered for structural power and seamless execution. A legacy of
+                    precision-coded architectural digital assets.
+                </p>
+            </div>
+        </section>
+        <!-- Technical Arsenal - Bento Grid -->
+        <section class="px-8 mb-32">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="h-[2px] w-12 bg-primary"></div>
+                <h2 class="text-2xl font-bold font-headline uppercase tracking-widest">Technical Arsenal</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Skill Cards -->
+                <div
+                    class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square group hover:bg-surface-bright transition-colors duration-300">
+                    <span class="text-on-surface-variant text-xs font-label tracking-widest">01</span>
+                    <span class="text-xl font-bold font-headline">HTML5</span>
+                </div>
+                <div
+                    class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square group hover:bg-surface-bright transition-colors duration-300">
+                    <span class="text-on-surface-variant text-xs font-label tracking-widest">02</span>
+                    <span class="text-xl font-bold font-headline">CSS3</span>
+                </div>
+                <div
+                    class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square group hover:bg-surface-bright transition-colors duration-300">
+                    <span class="text-on-surface-variant text-xs font-label tracking-widest">03</span>
+                    <span class="text-xl font-bold font-headline text-primary">JS/ES6</span>
+                </div>
+                <div
+                    class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square group hover:bg-surface-bright transition-colors duration-300">
+                    <span class="text-on-surface-variant text-xs font-label tracking-widest">04</span>
+                    <span class="text-xl font-bold font-headline">REACT</span>
+                </div>
+                <div
+                    class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square group hover:bg-surface-bright transition-colors duration-300">
+                    <span class="text-on-surface-variant text-xs font-label tracking-widest">05</span>
+                    <span class="text-xl font-bold font-headline">NODE.JS</span>
+                </div>
+                <div
+                    class="bg-surface-container-high p-8 flex flex-col justify-between aspect-square group hover:bg-surface-bright transition-colors duration-300">
+                    <span class="text-on-surface-variant text-xs font-label tracking-widest">06</span>
+                    <span class="text-xl font-bold font-headline">JAVA</span>
+                </div>
+            </div>
+        </section>
+        <!-- Project Details - Asymmetric Layout -->
+        <section class="px-8 mb-32 space-y-32">
+            <!-- Learnify -->
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-3/5 relative group overflow-hidden bg-surface-container-lowest">
+                    <img alt="Online learning platform dashboard"
+                        class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 scale-105 group-hover:scale-100"
+                        data-alt="Digital interface for a robust learning management system"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRqvjft0s9qC8oI7Xh74U9xAhpS9qt0lgktsg4tXvoNit2_d8P4FlpumXVsqvpl3jGLzezo_ilMaTlCDTAYPjnE9gM3XIat8-k5bUBqft8W4HUennyYSs6qy4YWo8HKIKdAMozgw1Cq9PsCYFi9NGko-5qLj765ugIccDqR_2vgnDZnv7dbtP8wH6MDbNYFqJ553YmS2k_evALpMZDV_NLZO8POpfNfIDRqCjhua5L4sHI5IjeQb6Y8iKp4Yx4d0KwU_AaY6J6AU4" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent opacity-80"></div>
+                </div>
+                <div class="w-full md:w-2/5">
+                    <div class="mb-4">
+                        <span class="text-primary font-label text-xs tracking-[0.2em] uppercase">MERN +
+                            CLOUDINARY</span>
+                    </div>
+                    <h3 class="text-4xl font-extrabold font-headline mb-6 tracking-tight">LEARNIFY</h3>
+                    <p class="text-on-surface-variant mb-8 leading-relaxed font-body">
+                        Robust online learning platform featuring real-time progress tracking, video streaming
+                        integration, and comprehensive course management systems. Engineered for high-load scalability.
+                    </p>
+                    <div class="flex gap-4">
+                        <button
+                            class="primary-gradient-btn px-8 py-3 text-black font-bold uppercase tracking-widest text-xs transition-transform active:scale-95">VIEW
+                            REPO</button>
+                        <button
+                            class="border border-outline-variant px-8 py-3 text-on-surface font-bold uppercase tracking-widest text-xs hover:border-primary transition-colors">LIVE
+                            DEMO</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Todos -->
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div class="w-full md:w-3/5 relative group overflow-hidden bg-surface-container-lowest">
+                    <img alt="Minimalist task management application"
+                        class="w-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 scale-105 group-hover:scale-100"
+                        data-alt="High performance task management app with dark theme"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsHg6v6ofgoPHg_3TMphxxqwLh9g9Vh1CUgDjKt_d4f-CW41oHKIXtiyVFW1Yg6-InHG1I9p-Gx6RR_OzvV7WttJTXbnGXFdgpkKmrKrNBoJxt5VNEfb56DC7ayrCTFrm51ms8m0_yKtfFz21zKZlJvNe6Bp6Dv4H7jZYCY2xm93gW-G1mvdiSeu8t8861jLI69UPLsv-1M0THs2RvgDSflRQRXspn8L9lmWvvnh09szAvW4LfRpCGsLmAFVumitA105WfoYq_Qy8" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-surface-dim to-transparent opacity-80"></div>
+                </div>
+                <div class="w-full md:w-2/5 text-left md:text-right">
+                    <div class="mb-4">
+                        <span class="text-primary font-label text-xs tracking-[0.2em] uppercase">MERN + REDUX</span>
+                    </div>
+                    <h3 class="text-4xl font-extrabold font-headline mb-6 tracking-tight uppercase">TODOS</h3>
+                    <p class="text-on-surface-variant mb-8 leading-relaxed font-body">
+                        High-performance task management app with seamless drag-and-drop mechanics, state persistence
+                        via Redux, and an uncompromising minimalist interface for maximum focus.
+                    </p>
+                    <div class="flex gap-4 md:justify-end">
+                        <button
+                            class="border border-outline-variant px-8 py-3 text-on-surface font-bold uppercase tracking-widest text-xs hover:border-primary transition-colors">LIVE
+                            DEMO</button>
+                        <button
+                            class="primary-gradient-btn px-8 py-3 text-black font-bold uppercase tracking-widest text-xs transition-transform active:scale-95">VIEW
+                            REPO</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Terminal Section -->
+        <section class="px-8 mb-32">
+            <div class="bg-surface-container-lowest p-1 border-l-4 border-primary">
+                <div class="bg-surface-container-high p-2 flex items-center justify-between">
+                    <div class="flex gap-2 px-2">
+                        <div class="w-3 h-3 rounded-full bg-error-dim"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    </div>
+                    <div class="text-[10px] text-on-surface-variant font-label tracking-widest">KAMESH_STATION /
+                        SESSION_01</div>
+                    <div class="w-12"></div>
+                </div>
+                <div class="p-8 font-mono text-sm leading-relaxed overflow-x-auto">
+                    <div class="flex gap-4">
+                        <span class="text-outline">01</span>
+                        <code class="text-tertiary">const</code> <code class="text-on-surface">DEVELOPER_PROFILE</code>
+                        <code class="text-primary">=</code> <code class="text-on-surface">{</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">02</span>
+                        <code class="pl-8 text-on-surface">alias:</code> <code
+                            class="text-secondary-dim">"Kamesh"</code><code class="text-on-surface">,</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">03</span>
+                        <code class="pl-8 text-on-surface">protocol:</code> <code
+                            class="text-secondary-dim">"MERN_STACK_PROTOCOL"</code><code
+                            class="text-on-surface">,</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">04</span>
+                        <code class="pl-8 text-on-surface">deployment_status:</code> <code
+                            class="text-emerald-400">"ACTIVE"</code><code class="text-on-surface">,</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">05</span>
+                        <code class="pl-8 text-on-surface">focus_areas: [</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">06</span>
+                        <code class="pl-16 text-secondary-dim">"Scalable Architectures"</code><code
+                            class="text-on-surface">,</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">07</span>
+                        <code class="pl-16 text-secondary-dim">"Fullstack Optimization"</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">08</span>
+                        <code class="pl-8 text-on-surface">]</code>
+                    </div>
+                    <div class="flex gap-4">
+                        <span class="text-outline">09</span>
+                        <code class="text-on-surface">};</code>
+                    </div>
+                    <div class="mt-4 flex gap-4">
+                        <span class="text-outline">10</span>
+                        <code class="text-primary-fixed-dim">Kamesh@Kinetic_Arch:~$</code> <span
+                            class="animate-pulse w-2 h-4 bg-primary inline-block"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#484848]/15">
+        <div class="text-[#ff8e7d] font-bold tracking-widest uppercase text-xs">
+            KINETIC_ARCHITECT
+        </div>
+        <div class="flex gap-8">
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://github.com" target="_blank">GitHub</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://instagram.com" target="_blank">Instagram</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="index.html#contact">Contact</a>
+        </div>
+        <div class="font-['Sora'] text-[#ababab] text-sm">
+            Built with Precision
+        </div>
+    </footer>
+</body>
+
+</html>
