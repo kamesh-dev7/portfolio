@@ -24,7 +24,7 @@
 <body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary-fixed">
     <!-- TopNavBar -->
     <nav
-        class="fixed top-0 w-full flex justify-between items-center px-4 md:px-8 py-4 bg-[#0e0e0e]/70 backdrop-blur-xl z-[100] shadow-[0_0_40px_rgba(255,0,0,0.08)]">
+        class="fixed top-0 w-full flex flex-row-reverse justify-between items-center px-4 md:px-8 py-4 bg-[#000000]/70 backdrop-blur-xl z-[100] shadow-[0_0_40px_rgba(255,0,0,0.15)]">
         <a href="index.html" class="text-xl font-extrabold tracking-tighter text-white font-['Sora']">
             PORTFOLIO
         </a>
@@ -36,7 +36,7 @@
             <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
                 href="#contact">Contact</a>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex flex-row-reverse items-center gap-4">
             <button
                 onclick="document.getElementById('contact').scrollIntoView()"
                 class="hidden sm:block bg-machined text-on-primary-fixed font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold px-6 py-2 transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,142,125,0.4)] active:scale-95">
@@ -49,8 +49,8 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[90] flex flex-col items-center justify-center gap-8 -translate-y-full transition-transform duration-500 ease-in-out md:hidden">
-        <button id="close-menu-btn" class="absolute top-6 right-6 text-white">
+    <div id="mobile-menu" class="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[90] flex flex-col items-center justify-center gap-8 -translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+        <button id="close-menu-btn" class="absolute top-6 left-6 text-white">
             <span class="material-symbols-outlined text-4xl">close</span>
         </button>
         <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
@@ -73,12 +73,12 @@
         const menuLinks = menu.querySelectorAll('a');
 
         const closeMenu = () => {
-            menu.classList.add('-translate-y-full');
+            menu.classList.add('-translate-x-full');
             document.body.classList.remove('overflow-hidden');
         };
 
         const openMenu = () => {
-            menu.classList.remove('-translate-y-full');
+            menu.classList.remove('-translate-x-full');
             document.body.classList.add('overflow-hidden');
         };
 
@@ -291,8 +291,8 @@
         </section>
         <!-- CTA Section -->
         <section id="contact" class="py-40 px-8 relative overflow-hidden bg-surface-container-lowest">
-            <div class="absolute inset-0 opacity-10 pointer-events-none"
-                style="background-image: radial-gradient(circle at 50% 50%, #ff8e7d 0%, transparent 70%);"></div>
+            <div class="absolute inset-0 opacity-20 pointer-events-none"
+                style="background-image: radial-gradient(circle at 50% 50%, #ff0000 0%, transparent 70%);"></div>
             <div class="max-w-4xl mx-auto text-center relative z-10">
                 <h2 class="font-['Sora'] text-[clamp(2rem,6vw,4rem)] font-extrabold leading-[1.1] mb-12 uppercase">
                     Let's Build Something <br />
@@ -330,8 +330,8 @@
     </main>
     <!-- Footer -->
     <footer
-        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#484848]/15">
-        <div class="text-[#ff8e7d] font-bold tracking-widest uppercase text-xs">
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#000000] border-t border-[#333333]/30">
+        <div class="text-[#ff0000] font-bold tracking-widest uppercase text-xs">
             PORTFOLIO
         </div>
         <div class="font-['Sora'] text-[#ababab] text-sm">
