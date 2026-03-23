@@ -21,7 +21,7 @@
     <nav
         class="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-[#0e0e0e]/70 backdrop-blur-xl z-50 shadow-[0_0_40px_rgba(255,0,0,0.08)]">
         <a href="index.html" class="text-xl font-extrabold tracking-tighter text-white font-['Sora']">
-            KINETIC_ARCHITECT
+            PORTFOLIO
         </a>
         <div class="hidden md:flex items-center gap-8">
             <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
@@ -282,10 +282,13 @@
     <footer
         class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#484848]/15">
         <div class="text-[#ff8e7d] font-bold tracking-widest uppercase text-xs">
-            KINETIC_ARCHITECT
+            PORTFOLIO
         </div>
         <div class="font-['Sora'] text-[#ababab] text-sm">
-            Built with Precision © 2024
+            Built with Precision ©<span id="year"></span>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
         </div>
         <div class="flex gap-6">
             <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"

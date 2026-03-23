@@ -1,4 +1,4 @@
-# KINETIC_ARCHITECT - Developer Portfolio
+# PORTFOLIO - Developer Portfolio
 
 A high-performance, precision-coded personal developer portfolio for **Kamesh**, engineered with a modular, terminal-driven aesthetic and modern architectural design. Built to be lightweight, incredibly fast, and beautifully dark-themed.
 
@@ -44,4 +44,7 @@ This project relies entirely on client-side rendering with CDN scripts, meaning 
 - **GitHub Node:** [@kamesh-dev7](https://github.com/kamesh-dev7)
 
 ---
-*Built with Precision.* 
+*Built with Precision © <span id="year"></span>*
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script> 

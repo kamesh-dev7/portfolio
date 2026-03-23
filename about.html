@@ -21,7 +21,7 @@
     <nav
         class="fixed top-0 w-full flex justify-between items-center px-8 py-4 bg-[#0e0e0e]/70 backdrop-blur-xl z-50 shadow-[0_0_40px_rgba(255,0,0,0.08)]">
         <a href="index.html" class="text-xl font-extrabold tracking-tighter text-white font-['Sora']">
-            KINETIC_ARCHITECT
+            PORTFOLIO
         </a>
         <div class="hidden md:flex items-center gap-8">
             <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
@@ -31,8 +31,7 @@
             <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
                 href="index.html#contact">Contact</a>
         </div>
-        <button
-            onclick="window.location.href='index.html#contact'"
+        <button onclick="window.location.href='index.html#contact'"
             class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold bg-primary text-on-primary-fixed px-6 py-2 transition-all duration-300 hover:bg-[#ff8e7d] hover:text-black scale-95 active:scale-90">
             Get in Touch
         </button>
@@ -49,7 +48,7 @@
                     <div class="flex items-center gap-4 mb-6">
                         <div class="h-[2px] w-12 bg-primary"></div>
                         <span class="font-label text-primary uppercase tracking-[0.2em] text-xs font-bold">About the
-                            Architect</span>
+                            Developer</span>
                     </div>
                     <h1 class="font-sora text-6xl md:text-8xl font-extrabold tracking-[-0.04em] mb-8 leading-none">
                         Engineering <span class="text-primary">Digital</span> Resilience
@@ -71,8 +70,7 @@
                     <div
                         class="aspect-square bg-surface-container-highest relative grayscale hover:grayscale-0 transition-all duration-700 group">
                         <img alt="Portrait of Kamesh" class="w-full h-full object-cover"
-                            data-alt="Professional portrait of a male developer in dark lighting"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZToP9iz0X_IAx_brG4gFsbfO7OL0RACnQpVy3g5YyTSTaQueXg1x37liGQKQP6G_pheKJpXWHOJ7FzbIXz3i8VkfA0OaCWhTSz0sUXkOIANDwATGSwD4T0TSBkemboLRVgSh2x6Qz6XcJriSPGKcg1NqgYmnfKTvB6XVcUu4GmKTLfsm269oSw-eD093jetP7_0F9txKPNysC3_XjkbCky6JZ4pria3MEpz7LVRU8HnmWzu6CVjCvzhndPOFyl0rNnPclffVDOAA" />
+                            data-alt="Professional portrait of a male developer in dark lighting" src="photo.png" />
                         <div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
                         <div class="absolute -bottom-4 -right-4 w-full h-full border border-primary/20 -z-10"></div>
                     </div>
@@ -162,7 +160,8 @@
                         <!-- Social Block -->
                         <div
                             class="bg-primary flex flex-col items-center justify-center p-8 group cursor-pointer transition-all duration-300 hover:bg-primary-container">
-                            <img src="_mr_broken_soul_007_qr.png" alt="Instagram QR Code" class="h-20 w-20 mb-4 rounded-xl bg-white p-1 group-hover:scale-110 transition-transform shadow-lg" />
+                            <img src="_mr_broken_soul_007_qr.png" alt="Instagram QR Code"
+                                class="h-20 w-20 mb-4 rounded-xl bg-white p-1 group-hover:scale-110 transition-transform shadow-lg" />
                             <p class="font-label font-black text-on-primary-fixed uppercase tracking-tighter text-lg">
                                 @mr_broken_soul_007</p>
                             <p
@@ -215,7 +214,7 @@
     <footer
         class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#0e0e0e] border-t border-[#484848]/15">
         <div class="text-[#ff8e7d] font-bold tracking-widest uppercase text-xs">
-            KINETIC_ARCHITECT
+            PORTFOLIO
         </div>
         <div class="flex gap-8">
             <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
@@ -228,7 +227,10 @@
                 href="index.html#contact">Contact</a>
         </div>
         <div class="font-['Sora'] text-[#ababab] text-sm">
-            Built with Precision © 2024
+            Built with Precision ©<span id="year"></span>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
         </div>
     </footer>
 </body>
