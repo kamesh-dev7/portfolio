@@ -34,6 +34,8 @@
             <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
                 href="about.html">About</a>
             <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="certificates.html">Certificates</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
                 href="#contact">Contact</a>
         </div>
         <div class="flex flex-row-reverse items-center gap-4">
@@ -57,6 +59,8 @@
             href="projectinfo.html">Work</a>
         <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
             href="about.html">About</a>
+        <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
+            href="certificates.html">Certificates</a>
         <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
             href="#contact">Contact</a>
         <button
@@ -85,6 +89,72 @@
         menuBtn.addEventListener('click', openMenu);
         closeBtn.addEventListener('click', closeMenu);
         menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // Certificate Modal Controls
+        window.openCertificateModal = (title, imgSrc, pdfSrc) => {
+            const modal = document.getElementById('certificate-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalPdfLink = document.getElementById('modal-pdf-link');
+            const modalContent = document.getElementById('modal-content');
+
+            if (!modal || !modalTitle || !modalImage || !modalPdfLink || !modalContent) return;
+
+            modalTitle.textContent = title;
+            modalImage.src = imgSrc;
+            modalPdfLink.href = pdfSrc;
+            
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.add('opacity-100');
+            
+            setTimeout(() => {
+                modalContent.classList.remove('scale-90');
+                modalContent.classList.add('scale-100');
+            }, 50);
+            
+            document.body.classList.add('overflow-hidden');
+        };
+
+        window.closeCertificateModal = () => {
+            const modal = document.getElementById('certificate-modal');
+            const modalContent = document.getElementById('modal-content');
+
+            if (!modal || !modalContent) return;
+
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-90');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        // Esc key closes modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('certificate-modal');
+                if (modal && !modal.classList.contains('opacity-0')) {
+                    closeCertificateModal();
+                }
+            }
+        });
+
+        // Intersection Observer for Certificates Entrance Animation
+        const certificatesSection = document.getElementById('certificates');
+        if (certificatesSection) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        certificatesSection.classList.remove('opacity-0', 'translate-y-10');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+            observer.observe(certificatesSection);
+        }
     </script>
 
     <main class="pt-20 md:pt-24">
@@ -289,6 +359,111 @@
                 </div>
             </div>
         </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="py-32 px-8 bg-surface-container-low border-t border-outline-variant/10 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-4">
+                    <div>
+                        <span class="text-primary font-bold text-sm tracking-widest uppercase block mb-2">03 / Validated Expertise</span>
+                        <h2 class="font-['Sora'] text-4xl font-extrabold uppercase text-glow">
+                            Certificates &amp; Credentials
+                        </h2>
+                    </div>
+                    <p class="text-on-surface-variant max-w-md">
+                        Verified training and academic milestones establishing operational mastery in engineering.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card 01: India AI Prompt Challenge -->
+                    <div class="bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all duration-500 group cursor-pointer relative overflow-hidden flex flex-col justify-between" onclick="openCertificateModal('India AI Prompt Challenge 2026', 'certificate/KAMESH-M.jpg', 'certificate/India_AI_Prompt_Challenge_2026_Kamesh_M.pdf')">
+                        <div class="aspect-video relative overflow-hidden bg-black flex items-center justify-center">
+                            <img src="certificate/KAMESH-M.jpg" alt="India AI Prompt Challenge 2026" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <!-- Eye icon overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+                                <div class="bg-primary/95 text-white p-3 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                    <span class="material-symbols-outlined text-2xl">visibility</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-3 py-1 font-bold uppercase tracking-widest">National Challenge</span>
+                                    <span class="text-xs text-on-surface-variant font-medium">2026</span>
+                                </div>
+                                <h3 class="font-['Sora'] text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-2">India AI Prompt Challenge</h3>
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Organized national-level initiative showcasing advanced cognitive guidance and optimized system prompting capabilities.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-outline-variant/10">
+                                <span class="font-['Sora'] text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
+                                    Quick View <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </span>
+                                <a href="certificate/India_AI_Prompt_Challenge_2026_Kamesh_M.pdf" target="_blank" onclick="event.stopPropagation();" class="text-xs font-bold uppercase tracking-widest text-[#ababab] hover:text-white transition-colors ml-auto flex items-center gap-1">
+                                    PDF Document <span class="material-symbols-outlined text-sm">download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 02: Main Academic/Professional Certificate -->
+                    <div class="bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all duration-500 group cursor-pointer relative overflow-hidden flex flex-col justify-between" onclick="openCertificateModal('Professional Credentials / Achievement', 'certificate/KAMESH M.jpg', 'certificate/KAMESH_M_Certificate.pdf')">
+                        <div class="aspect-video relative overflow-hidden bg-black flex items-center justify-center">
+                            <img src="certificate/KAMESH M.jpg" alt="Professional Certification" class="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                            <!-- Eye icon overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+                                <div class="bg-primary/95 text-white p-3 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                    <span class="material-symbols-outlined text-2xl">visibility</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-3 py-1 font-bold uppercase tracking-widest">Engineering Milestone</span>
+                                    <span class="text-xs text-on-surface-variant font-medium">Active</span>
+                                </div>
+                                <h3 class="font-['Sora'] text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-2">Professional Certification</h3>
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Core professional documentation confirming specialized skill matrices and technical proficiency credentials.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-auto pt-4 border-t border-outline-variant/10">
+                                <span class="font-['Sora'] text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
+                                    Quick View <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </span>
+                                <a href="certificate/KAMESH_M_Certificate.pdf" target="_blank" onclick="event.stopPropagation();" class="text-xs font-bold uppercase tracking-widest text-[#ababab] hover:text-white transition-colors ml-auto flex items-center gap-1">
+                                    PDF Document <span class="material-symbols-outlined text-sm">download</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="certificate-modal" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[200] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 ease-out" onclick="closeCertificateModal()">
+            <button class="absolute top-6 right-6 text-white/70 hover:text-white flex items-center justify-center bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300" onclick="closeCertificateModal(); event.stopPropagation();">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            <div class="max-w-5xl w-full px-4 flex flex-col items-center" onclick="event.stopPropagation();">
+                <h3 id="modal-title" class="font-['Sora'] text-2xl font-bold text-white mb-6 text-center">Certificate Title</h3>
+                <div class="relative bg-surface-container border border-outline-variant/20 max-h-[70vh] flex items-center justify-center overflow-hidden rounded-xl shadow-[0_0_50px_rgba(255,0,0,0.15)] transition-transform duration-500 scale-90" id="modal-content">
+                    <img id="modal-image" src="" alt="Certificate Preview" class="max-w-full max-h-[70vh] object-contain" />
+                </div>
+                <div class="mt-8 flex gap-4">
+                    <a id="modal-pdf-link" href="" target="_blank" class="bg-machined text-white px-8 py-3 font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,142,125,0.4)] active:scale-95 flex items-center gap-2">
+                        View Official PDF <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                    <button class="border border-outline-variant px-8 py-3 text-on-surface hover:text-white hover:border-white font-bold uppercase tracking-widest text-xs transition-colors duration-300" onclick="closeCertificateModal()">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- CTA Section -->
         <section id="contact" class="py-40 px-8 relative overflow-hidden bg-surface-container-lowest">
             <div class="absolute inset-0 opacity-20 pointer-events-none"

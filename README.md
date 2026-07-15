@@ -4,15 +4,16 @@ A high-performance, precision-coded personal developer portfolio for **Kamesh**,
 
 ## 🔥 Key Features
 - **Cyberpunk / Editorial Aesthetic:** A striking dark-mode interface featuring glowing text, glassmorphism navigation, and carefully curated fonts (Sora, Space Grotesk, Inter).
-- **Responsive Navigation:** A seamlessly linked, multi-page structure consisting of Home (`index.html`), About (`about.html`), and Work/Projects Archive (`projectinfo.html`).
+- **Responsive Navigation:** A seamlessly linked, multi-page structure consisting of Home (`index.html`), About (`about.html`), Work/Projects Archive (`projectinfo.html`), and Certificates (`certificates.html`).
+- **Interactive Certificate Showcase:** A dedicated certificates grid with scroll-driven animations, a glowing progress bar, and realistic 3D card tilt transformations.
 - **Tailwind CSS Integration:** Configured dynamically through a centralized `tailwind-config.js` script, allowing for infinite scalability and theming across all pages.
-- **Micro-Interactions & Animations:** Smooth scrolling behavior, interactive hover states, scalable element transitions, and a pulse-animated mock terminal segment.
-- **Custom Assets Context:** Contains dedicated placements for custom profile photography and an injectable Instagram QR Code configuration (`_mr_broken_soul_007_qr.png`).
+- **Micro-Interactions & Animations:** Smooth scrolling behavior, interactive hover states, scalable element transitions, 3D mouse tracking tilt, and a pulse-animated mock terminal segment.
+- **Custom Assets Context:** Contains dedicated placements for custom profile photography, certificates, and an injectable Instagram QR Code configuration (`_mr_broken_soul_007_qr.png`).
 
 ## 🛠️ Technical Stack
 - **Structure:** HTML5
-- **Styling:** CSS3 (Vanilla `global.css`) & Tailwind CSS (via CDN)
-- **Logic / Config:** ES6 Javascript (`tailwind-config.js`)
+- **Styling:** CSS3 (Vanilla `global.css` with 3D transforms) & Tailwind CSS (via CDN)
+- **Logic / Config:** ES6 Javascript (`tailwind-config.js`, IntersectionObserver, Tilt logic)
 - **Typography:** Google Fonts (`Inter`, `Space Grotesk`, `Sora`)
 - **Icons:** Google Material Symbols
 
@@ -22,6 +23,7 @@ A high-performance, precision-coded personal developer portfolio for **Kamesh**,
 ├── index.html            # The main landing page / hero / features
 ├── about.html            # Biography, skills matrix, and terminal mock interface
 ├── projectinfo.html      # Comprehensive archive of previous deployed MERN projects
+├── certificates.html     # Interactive showcase of credentials with 3D tilt & scroll animations
 ├── global.css            # Reusable CSS for bespoke aesthetic classes
 └── tailwind-config.js    # Shared Tailwind themes (Color palettes, custom fonts)
 ```

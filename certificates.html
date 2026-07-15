@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Certificates | Portfolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="tailwind-config.js"></script>
+    <script>
+        tailwind.config.theme.extend.transitionProperty = {
+            'menu': 'transform, opacity',
+        }
+    </script>
+    <link rel="stylesheet" href="global.css" />
+    <style>
+        /* Custom scroll animations */
+        .reveal-card {
+            opacity: 0;
+            transform: translateY(80px) scale(0.95);
+            transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-card.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* 3D tilt wrapper */
+        .tilt-wrapper {
+            perspective: 1000px;
+        }
+
+        .tilt-card {
+            transition: transform 0.1s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        /* Custom scroll progress indicator */
+        .scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff0000 0%, #ff8e7d 50%, #ff0000 100%);
+            z-index: 200;
+            width: 0%;
+            transition: width 0.1s ease-out;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary selection:text-on-primary-fixed overflow-x-hidden">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-bar" id="scroll-progress"></div>
+
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full flex flex-row-reverse justify-between items-center px-4 md:px-8 py-4 bg-[#000000]/70 backdrop-blur-xl z-[100] shadow-[0_0_40px_rgba(255,0,0,0.15)]">
+        <a href="index.html" class="text-xl font-extrabold tracking-tighter text-white font-['Sora']">
+            PORTFOLIO
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="projectinfo.html">Work</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="about.html">About</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ff8e7d] border-b-2 border-[#ff8e7d] pb-1"
+                href="certificates.html">Certificates</a>
+            <a class="font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold text-[#ababab] hover:text-white transition-colors"
+                href="index.html#contact">Contact</a>
+        </div>
+        <div class="flex flex-row-reverse items-center gap-4">
+            <button onclick="window.location.href='index.html#contact'"
+                class="hidden sm:block font-['Sora'] uppercase tracking-[0.1em] text-[0.75rem] font-bold bg-primary text-on-primary-fixed px-6 py-2 transition-all duration-300 hover:bg-[#ff8e7d] hover:text-black scale-95 active:scale-90">
+                Get in Touch
+            </button>
+            <button id="mobile-menu-btn" class="md:hidden text-white flex items-center justify-center">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[90] flex flex-col items-center justify-center gap-8 -translate-x-full transition-transform duration-500 ease-in-out md:hidden">
+        <button id="close-menu-btn" class="absolute top-6 left-6 text-white">
+            <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+        <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
+            href="projectinfo.html">Work</a>
+        <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
+            href="about.html">About</a>
+        <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ff8e7d]"
+            href="certificates.html">Certificates</a>
+        <a class="font-['Sora'] uppercase tracking-[0.2em] text-2xl font-extrabold text-[#ababab] hover:text-white transition-colors"
+            href="index.html#contact">Contact</a>
+        <button
+            onclick="window.location.href='index.html#contact'; document.getElementById('close-menu-btn').click();"
+            class="mt-4 bg-machined text-on-primary-fixed font-['Sora'] uppercase tracking-[0.1em] text-[1rem] font-bold px-10 py-4 transition-all duration-300">
+            Get in Touch
+        </button>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuLinks = menu.querySelectorAll('a');
+
+        const closeMenu = () => {
+            menu.classList.add('-translate-x-full');
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        const openMenu = () => {
+            menu.classList.remove('-translate-x-full');
+            document.body.classList.add('overflow-hidden');
+        };
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+        menuLinks.forEach(link => link.addEventListener('click', closeMenu));
+    </script>
+
+    <main class="pt-24 md:pt-32">
+        <!-- Hero Section -->
+        <section class="px-4 md:px-8 mb-20 relative overflow-hidden">
+            <div class="absolute -right-20 -top-20 text-[12rem] font-extrabold text-stroke opacity-5 pointer-events-none select-none">
+                CREDENTIALS
+            </div>
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="h-[2px] w-12 bg-primary"></div>
+                    <span class="font-label text-primary uppercase tracking-[0.2em] text-xs font-bold">Validated Expertise</span>
+                </div>
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-extrabold tracking-[-0.04em] leading-tight font-headline hero-text-shadow uppercase">
+                    Certificates &amp; <br /><span class="text-primary">Credentials</span>
+                </h1>
+                <p class="text-on-surface-variant text-lg max-w-2xl mt-6 font-body leading-relaxed">
+                    Verified training, national milestones, and academic milestones establishing technical and operational mastery in full-stack engineering.
+                </p>
+            </div>
+        </section>
+
+        <!-- Certificates List Showcase -->
+        <section class="px-4 md:px-8 pb-32">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                
+                <!-- Certificate Card 1 -->
+                <div class="reveal-card tilt-wrapper" data-index="1">
+                    <div class="tilt-card bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all duration-500 group cursor-pointer relative overflow-hidden flex flex-col justify-between rounded-lg shadow-xl"
+                         onclick="openCertificateModal('India AI Prompt Challenge 2026', 'certificate/India_AI_Prompt_Challenge_2026_Kamesh_M.png', 'certificate/India_AI_Prompt_Challenge_2026_Kamesh_M.png')">
+                        <div class="aspect-[4/3] relative overflow-hidden bg-black flex items-center justify-center border-b border-outline-variant/20">
+                            <img src="certificate/India_AI_Prompt_Challenge_2026_Kamesh_M.png" alt="India AI Prompt Challenge 2026" class="w-full h-full object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                            <!-- Action overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/55 backdrop-blur-[2px]">
+                                <div class="bg-primary text-white p-4 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">
+                                    <span class="material-symbols-outlined text-3xl">zoom_in</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-3 py-1 font-bold uppercase tracking-widest">National Challenge</span>
+                                    <span class="text-xs text-on-surface-variant font-semibold">2026</span>
+                                </div>
+                                <h3 class="font-['Sora'] text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-3">India AI Prompt Challenge</h3>
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Organized national-level initiative showcasing advanced cognitive guidance and optimized system prompting capabilities.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-auto pt-6 border-t border-outline-variant/10">
+                                <span class="font-['Sora'] text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
+                                    View Certificate <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 2 -->
+                <div class="reveal-card tilt-wrapper" data-index="2">
+                    <div class="tilt-card bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all duration-500 group cursor-pointer relative overflow-hidden flex flex-col justify-between rounded-lg shadow-xl"
+                         onclick="openCertificateModal('Professional Credentials / Achievement', 'certificate/KAMESH M.jpg', 'certificate/KAMESH M.jpg')">
+                        <div class="aspect-[4/3] relative overflow-hidden bg-black flex items-center justify-center border-b border-outline-variant/20">
+                            <img src="certificate/KAMESH M.jpg" alt="Professional Certification" class="w-full h-full object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                            <!-- Action overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/55 backdrop-blur-[2px]">
+                                <div class="bg-primary text-white p-4 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">
+                                    <span class="material-symbols-outlined text-3xl">zoom_in</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-3 py-1 font-bold uppercase tracking-widest">Engineering Milestone</span>
+                                    <span class="text-xs text-on-surface-variant font-semibold">Active</span>
+                                </div>
+                                <h3 class="font-['Sora'] text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-3">Professional Certification</h3>
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Core professional documentation confirming specialized skill matrices and technical proficiency credentials.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-auto pt-6 border-t border-outline-variant/10">
+                                <span class="font-['Sora'] text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
+                                    View Certificate <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 3 -->
+                <div class="reveal-card tilt-wrapper" data-index="3">
+                    <div class="tilt-card bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all duration-500 group cursor-pointer relative overflow-hidden flex flex-col justify-between rounded-lg shadow-xl"
+                         onclick="openCertificateModal('Kamesh M Certificate', 'certificate/KAMESH_M_Certificate.png', 'certificate/KAMESH_M_Certificate.png')">
+                        <div class="aspect-[4/3] relative overflow-hidden bg-black flex items-center justify-center border-b border-outline-variant/20">
+                            <img src="certificate/KAMESH_M_Certificate.png" alt="Kamesh M Certificate" class="w-full h-full object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                            <!-- Action overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/55 backdrop-blur-[2px]">
+                                <div class="bg-primary text-white p-4 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">
+                                    <span class="material-symbols-outlined text-3xl">zoom_in</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-3 py-1 font-bold uppercase tracking-widest">Academic Milestone</span>
+                                    <span class="text-xs text-on-surface-variant font-semibold">Active</span>
+                                </div>
+                                <h3 class="font-['Sora'] text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-3">Academic Achievements</h3>
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Official certification validating exceptional capabilities and milestones completed during higher education.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-auto pt-6 border-t border-outline-variant/10">
+                                <span class="font-['Sora'] text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
+                                    View Certificate <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 4 -->
+                <div class="reveal-card tilt-wrapper" data-index="4">
+                    <div class="tilt-card bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 transition-all duration-500 group cursor-pointer relative overflow-hidden flex flex-col justify-between rounded-lg shadow-xl"
+                         onclick="openCertificateModal('Technical Competence Credentials', 'certificate/KAMESH-M.jpg', 'certificate/KAMESH-M.jpg')">
+                        <div class="aspect-[4/3] relative overflow-hidden bg-black flex items-center justify-center border-b border-outline-variant/20">
+                            <img src="certificate/KAMESH-M.jpg" alt="Technical Competence Credentials" class="w-full h-full object-contain p-2 grayscale group-hover:grayscale-0 transition-all duration-700 ease-out" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent"></div>
+                            <!-- Action overlay -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/55 backdrop-blur-[2px]">
+                                <div class="bg-primary text-white p-4 rounded-full flex items-center justify-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-lg">
+                                    <span class="material-symbols-outlined text-3xl">zoom_in</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <span class="text-[10px] bg-primary/20 text-primary border border-primary/30 px-3 py-1 font-bold uppercase tracking-widest">Technical Credential</span>
+                                    <span class="text-xs text-on-surface-variant font-semibold">Active</span>
+                                </div>
+                                <h3 class="font-['Sora'] text-2xl font-bold text-white group-hover:text-primary transition-colors duration-300 mb-3">Specialization Milestone</h3>
+                                <p class="text-on-surface-variant text-sm mb-6 leading-relaxed">Proof of technical proficiency in deploying modern software infrastructure, MERN web solutions, and scripting protocols.</p>
+                            </div>
+                            <div class="flex gap-4 items-center mt-auto pt-6 border-t border-outline-variant/10">
+                                <span class="font-['Sora'] text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2 group-hover:translate-x-2 transition-transform duration-300">
+                                    View Certificate <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Lightbox Modal -->
+        <div id="certificate-modal" class="fixed inset-0 bg-black/95 backdrop-blur-xl z-[200] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 ease-out" onclick="closeCertificateModal()">
+            <button class="absolute top-6 right-6 text-white/70 hover:text-white flex items-center justify-center bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all duration-300" onclick="closeCertificateModal(); event.stopPropagation();">
+                <span class="material-symbols-outlined text-3xl">close</span>
+            </button>
+            <div class="max-w-5xl w-full px-4 flex flex-col items-center" onclick="event.stopPropagation();">
+                <h3 id="modal-title" class="font-['Sora'] text-2xl font-bold text-white mb-6 text-center">Certificate Title</h3>
+                <div class="relative bg-surface-container border border-outline-variant/20 max-h-[70vh] flex items-center justify-center overflow-hidden rounded-xl shadow-[0_0_50px_rgba(255,0,0,0.15)] transition-transform duration-500 scale-90" id="modal-content">
+                    <img id="modal-image" src="" alt="Certificate Preview" class="max-w-full max-h-[70vh] object-contain" />
+                </div>
+                <div class="mt-8 flex gap-4">
+                    <button class="border border-outline-variant px-8 py-3 text-on-surface hover:text-white hover:border-white font-bold uppercase tracking-widest text-xs transition-colors duration-300" onclick="closeCertificateModal()">
+                        Close Preview
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-[#000000] border-t border-[#333333]/30">
+        <div class="text-[#ff0000] font-bold tracking-widest uppercase text-xs">
+            PORTFOLIO
+        </div>
+        <div class="font-['Sora'] text-[#ababab] text-sm">
+            Built with Precision ©<span id="year"></span>
+            <script>
+                document.getElementById("year").textContent = new Date().getFullYear();
+            </script>
+        </div>
+        <div class="flex gap-6">
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://github.com/kamesh-dev7" target="_blank">GitHub</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="https://instagram.com" target="_blank">Instagram</a>
+            <a class="font-['Sora'] text-[#ababab] text-sm hover:text-[#ff8e7d] transition-colors opacity-80 hover:opacity-100"
+                href="index.html#contact">Contact</a>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Certificate Modal Controls
+        window.openCertificateModal = (title, imgSrc, targetSrc) => {
+            const modal = document.getElementById('certificate-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalImage = document.getElementById('modal-image');
+            const modalContent = document.getElementById('modal-content');
+
+            if (!modal || !modalTitle || !modalImage || !modalContent) return;
+
+            modalTitle.textContent = title;
+            modalImage.src = imgSrc;
+            
+            modal.classList.remove('pointer-events-none', 'opacity-0');
+            modal.classList.add('opacity-100');
+            
+            setTimeout(() => {
+                modalContent.classList.remove('scale-90');
+                modalContent.classList.add('scale-100');
+            }, 50);
+            
+            document.body.classList.add('overflow-hidden');
+        };
+
+        window.closeCertificateModal = () => {
+            const modal = document.getElementById('certificate-modal');
+            const modalContent = document.getElementById('modal-content');
+
+            if (!modal || !modalContent) return;
+
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-90');
+            
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            
+            document.body.classList.remove('overflow-hidden');
+        };
+
+        // Esc key closes modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('certificate-modal');
+                if (modal && !modal.classList.contains('opacity-0')) {
+                    closeCertificateModal();
+                }
+            }
+        });
+
+        // Intersection Observer for Reveal-on-Scroll Animation
+        const revealCards = document.querySelectorAll('.reveal-card');
+        const observerOptions = {
+            root: null,
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Once animated, we don't need to observe it anymore
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        revealCards.forEach(card => {
+            observer.observe(card);
+        });
+
+        // Scroll Progress Bar Update
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            if (scrollProgress) {
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+        });
+
+        // 3D Tilt Card Interaction
+        const tiltCards = document.querySelectorAll('.tilt-wrapper');
+        tiltCards.forEach(wrapper => {
+            const card = wrapper.querySelector('.tilt-card');
+            
+            wrapper.addEventListener('mousemove', (e) => {
+                const rect = wrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left; // x position within element
+                const y = e.clientY - rect.top;  // y position within element
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Tilt limits: 10 degrees max
+                const tiltX = ((centerY - y) / centerY) * 8;
+                const tiltY = ((x - centerX) / centerX) * 8;
+                
+                card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+                card.style.boxShadow = `${-tiltY * 1.5}px ${tiltX * 1.5}px 30px rgba(255, 0, 0, 0.25)`;
+            });
+            
+            wrapper.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+                card.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+
+</html>
